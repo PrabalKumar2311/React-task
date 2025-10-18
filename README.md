@@ -52,7 +52,7 @@ npm run dev
 - **Dashboard**
   - Search users by **name** or **email**  
   - Filter by **company**
-  - Viewed label which remembers which user is viewed
+  - **Viewed label** which remembers which user is viewed
   - Responsive **card grid** with **loading placeholders**  
 
 - **User Details**
@@ -72,6 +72,24 @@ npm run dev
 - **React Router DOM**  
 - **Axios**  
 - **Lucide React Icons**  
+
+##Screenshots
+
+<br>
+
+Desktop view
+<br>
+<br>
+<img width="500" height="300" alt="Website desktop view" src="https://github.com/user-attachments/assets/02a54c17-bdb4-463e-930e-548675e8310b" />
+
+<br>
+<br>
+
+Mobile view
+<br>
+<br>
+<img width="200" height="700" alt="Website mobile view" src="https://github.com/user-attachments/assets/967b44cf-8ea4-412c-a326-0df270e9ee1b" />
+
 
 ---
 
