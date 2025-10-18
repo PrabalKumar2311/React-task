@@ -49,7 +49,8 @@ npm run dev
 
 - **Dashboard**
   - Search users by **name** or **email**  
-  - Filter by **company** 
+  - Filter by **company**
+  - Viewed label which remembers which user is viewed
   - Responsive **card grid** with **loading placeholders**  
 
 - **User Details**
@@ -74,5 +75,5 @@ npm run dev
 
 ## Time taken to build 
 
-**5-7hrs**(approx)
+**6-8hrs**(approx)
 
