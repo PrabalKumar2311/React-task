@@ -1,15 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  ArrowLeft,
-  Mail,
-  Phone,
-  Globe,
-  Building2,
-  MapPin,
-  User,
-} from "lucide-react";
+import { ArrowLeft, Mail, Phone, Globe, Building2, MapPin, User } from "lucide-react";
 import Loader from "../components/Loader";
 
 export default function UserDetails() {
@@ -23,6 +15,12 @@ export default function UserDetails() {
       .then((res) => {
         setUser(res.data);
         setLoading(false);
+
+        const viewedUsers = JSON.parse(localStorage.getItem("viewedUsers")) || [];
+        if (!viewedUsers.includes(res.data.id)) {
+          viewedUsers.push(res.data.id);
+          localStorage.setItem("viewedUsers", JSON.stringify(viewedUsers));
+        }
       })
       .catch(() => setLoading(false));
   }, [id]);
@@ -37,7 +35,7 @@ export default function UserDetails() {
     );
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6 pt-20 relative">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-start p-6 relative">
       <div className="absolute top-6 left-6">
         <Link
           to="/"
@@ -48,8 +46,7 @@ export default function UserDetails() {
         </Link>
       </div>
 
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-md text-center">
-        {/* Profile Avatar */}
+      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-md mt-16 text-center">
         <div className="flex flex-col items-center">
           <div className="bg-gray-200 text-gray-600 rounded-full w-30 h-30 flex items-center justify-center mb-3">
             <User size={40} />
@@ -65,28 +62,27 @@ export default function UserDetails() {
             </p>
           </div>
           <div className="flex items-center py-2 p-2 text-gray-700">
-            <Phone size={18} className="mr-3 text-green-500 mb-2 mt-2" />
+            <Phone size={18} className="mr-3 text-green-500" />
             <p>
               <strong>Phone:</strong> {user.phone}
             </p>
           </div>
           <div className="flex items-center py-2 p-2 text-gray-700">
-            <Globe size={18} className="mr-3 text-purple-500 mb-2 mt-2" />
+            <Globe size={18} className="mr-3 text-purple-500" />
             <p>
               <strong>Website:</strong> {user.website}
             </p>
           </div>
           <div className="flex items-center py-2 p-2 text-gray-700">
-            <Building2 size={18} className="mr-3 text-yellow-500 mb-2 mt-2" />
+            <Building2 size={18} className="mr-3 text-yellow-500" />
             <p>
               <strong>Company:</strong> {user.company.name}
             </p>
           </div>
-          <div className="flex items-center py-2 p-2 text-gray-700 mt-1">
+          <div className="flex items-center py-2 p-2 text-gray-700">
             <MapPin size={18} className="mr-3 text-red-500" />
             <p>
-              <strong>Address:</strong> {user.address.city},{" "}
-              {user.address.street}
+              <strong>Address:</strong> {user.address.city}, {user.address.street}
             </p>
           </div>
         </div>

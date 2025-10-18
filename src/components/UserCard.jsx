@@ -1,12 +1,24 @@
 import { Link } from "react-router-dom";
 import { Mail, Building2, User } from "lucide-react";
-import Loader from "./Loader";
 
-export default function UserCard({ user, loading }) {
-  if (loading) return <Loader message="Loading user..." />;
+export default function UserCard({ user }) {
+  if (!user) {
+    return (
+      <div className="bg-gray-200 animate-pulse h-48 rounded-2xl"></div>
+    );
+  }
+
+  const viewedUsers = JSON.parse(localStorage.getItem("viewedUsers")) || [];
+  const isViewed = viewedUsers.includes(user.id);
 
   return (
-    <div className="bg-white shadow-md rounded-2xl p-5 hover:shadow-xl transition-all duration-300">
+    <div className="relative bg-white shadow-md rounded-2xl p-5 hover:shadow-xl transition-all duration-300">
+      {isViewed && (
+        <span className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+          Viewed
+        </span>
+      )}
+
       <div className="flex flex-col items-center">
         <div className="bg-gray-200 text-gray-600 rounded-full w-16 h-16 flex items-center justify-center mb-3">
           <User size={32} />

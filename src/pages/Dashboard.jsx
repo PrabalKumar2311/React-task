@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("all"); // filter state
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     axios
@@ -62,7 +62,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {loading
           ? Array.from({ length: 6 }).map((_, idx) => (
-              <UserCard key={idx} loading={true} />
+              <UserCard key={idx} />
             ))
           : filteredUsers.map((user) => <UserCard key={user.id} user={user} />)}
 
