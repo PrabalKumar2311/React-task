@@ -1,16 +1,78 @@
-# React + Vite
+# React User Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup instructions
 
-Currently, two official plugins are available:
+I used Tailwind, Router, Axios, Lucide so these dependencies need to be installed 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+use the instructions below to install everything that you need
 
-## React Compiler
+```bash
+git clone <repo-url>
+cd <repo-folder>
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Install Tailwind CSS:
 
-## Expanding the ESLint configuration
+Can also view from https://tailwindcss.com/docs/installation/using-vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+
+Install React Router DOM:
+
+```bash
+npm install react-router-dom
+```
+
+Install Axios:
+
+```bash
+npm install axios
+```
+
+Install Lucide React Icons:
+
+```bash
+npm install lucide-react
+```
+
+Run the dev server:
+
+```bash
+npm run dev
+```
+
+## Features list
+
+- **Dashboard**
+  - Search users by **name** or **email**  
+  - Filter by **company** 
+  - Responsive **card grid** with **loading placeholders**  
+
+- **User Details**
+  - Shows ** Name, Email, Phone, Website, Company, Address**
+  - **Back button** to dashboard  
+  - Loading animation while fetching data  
+
+- **Reusable Components**
+  - `UserCard` & `Loader` for consistent UI  
+
+---
+
+## Tech Stack
+
+- **React**  
+- **Tailwind CSS**  
+- **React Router DOM**  
+- **Axios**  
+- **Lucide React Icons**  
+
+---
+
+## Time taken to build 
+
+**5-7hrs**(approx)
+
