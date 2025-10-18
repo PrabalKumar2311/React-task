@@ -1,5 +1,7 @@
 # React User Dashboard
 
+You can view the project here https://user-dashboard-taskk.netlify.app
+
 ## Setup instructions
 
 I used Tailwind, Router, Axios, Lucide so these dependencies need to be installed 
